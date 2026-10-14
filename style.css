@@ -1,0 +1,272 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #f3f3f6 0%, #eaeaea 50%, #f7eaf0 100%);
+  color: #2c2c38;
+  min-height: 100vh;
+  padding: 20px 10px 80px 10px;
+  overflow-x: hidden;
+}
+
+.collage-wrapper {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+}
+
+/* Reproductor Fijo */
+.fixed-music-player {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ff70a6;
+  backdrop-filter: blur(10px);
+  padding: 8px 16px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 20px rgba(255, 112, 166, 0.2);
+}
+
+.music-info {
+  font-size: 0.75rem;
+  color: #c2185b;
+  font-weight: 500;
+  display: none;
+}
+
+@media (min-width: 480px) {
+  .music-info { display: inline; }
+}
+
+.music-btn {
+  background: linear-gradient(45deg, #ff70a6, #ff97b7);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 18px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(255, 112, 166, 0.3);
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  margin-top: 40px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.gap-badge {
+  display: inline-block;
+  background: #ff70a6;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.7rem;
+  padding: 4px 14px;
+  border-radius: 15px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.main-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 2.6rem;
+  color: #880e4f;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #66667a;
+  margin-bottom: 20px;
+}
+
+.distance-badge {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid rgba(255, 112, 166, 0.3);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #4a4a5a;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.heart-line {
+  color: #ff4b8b;
+  font-weight: bold;
+}
+
+/* --- MURAL DE FOTOS --- */
+.scrapbook-grid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  position: relative;
+}
+
+.polaroid {
+  background: #ffffff;
+  padding: 12px 12px 18px 12px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 112, 166, 0.2);
+  width: 260px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.polaroid:hover {
+  transform: scale(1.05) rotate(0deg) !important;
+  z-index: 10;
+  box-shadow: 0 15px 35px rgba(255, 112, 166, 0.3);
+}
+
+.polaroid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.caption {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #ad1457;
+  margin-top: 10px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* POSICIONES DEL COLLAGE */
+.pos-left { align-self: flex-start; margin-left: 5%; }
+.pos-right { align-self: flex-end; margin-right: 5%; }
+.pos-left-center { align-self: flex-start; margin-left: 15%; }
+.pos-center { align-self: center; }
+.pos-center-wide { align-self: center; width: 320px; }
+.pos-center-wide img { height: 240px; }
+
+.rot-left { transform: rotate(-4deg); }
+.rot-right { transform: rotate(5deg); }
+.rot-slightly-left { transform: rotate(-2deg); }
+
+/* --- CAJITAS ANIMADAS DE NOTAS SECRETAS --- */
+.animated-note-box {
+  background: #ffffff;
+  border: 2px solid #ff70a6;
+  border-radius: 16px;
+  padding: 14px 18px;
+  max-width: 280px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(255, 112, 166, 0.15);
+  transition: all 0.3s ease;
+}
+
+.animated-note-box:hover {
+  transform: scale(1.03);
+  background: #fff8fb;
+}
+
+.note-header {
+  color: #880e4f;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Animación de apertura de la cajita */
+.note-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease, margin-top 0.4s ease;
+  font-size: 0.85rem;
+  color: #4a4a5a;
+  line-height: 1.5;
+  border-top: 1px dashed #ffb3c6;
+}
+
+/* Clase que activa la apertura de la cajita */
+.animated-note-box.open .note-content {
+  max-height: 150px;
+  opacity: 1;
+  margin-top: 10px;
+}
+
+.note-left { align-self: flex-start; margin-left: 8%; }
+.note-right { align-self: flex-end; margin-right: 8%; }
+
+/* --- TARJETA FINAL DE LA PREGUNTA --- */
+.question-card {
+  background: #ffffff;
+  border: 2px solid #ff70a6;
+  border-radius: 28px;
+  padding: 35px 25px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(255, 112, 166, 0.2);
+  width: 100%;
+  max-width: 480px;
+  margin-top: 20px;
+}
+
+.question-title {
+  font-size: 1.7rem;
+  color: #880e4f;
+  margin: 12px 0 6px 0;
+}
+
+.question-desc {
+  font-size: 0.88rem;
+  color: #666677;
+  margin-bottom: 25px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  position: relative;
+  min-height: 50px;
+}
+
+.btn {
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.yes {
+  background: linear-gradient(45deg, #ff70a6, #ff4b8b);
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(255, 75, 139, 0.4);
+}
+
+.no {
+  background: #e4e4eb;
+  color: #555566;
+  position: absolute;
+  right: 20px;
+}

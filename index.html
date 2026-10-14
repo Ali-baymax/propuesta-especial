@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pink Theory💕</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Fuentes elegantes -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+  <!-- Confeti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- Reproductor Fijo -->
+  <div class="fixed-music-player">
+    <span class="music-info">🎶 Pink Theory Soundtrack</span>
+    <button id="musicToggleBtn" class="music-btn">▶️ Reproducir Música 💖</button>
+    <audio id="bgMusic" loop src="musica.mp3"></audio>
+  </div>
+
+  <div class="collage-wrapper">
+    
+    <!-- ENCABEZADO -->
+    <header class="hero-section">
+      <div class="gap-badge">GAP The Series Inspired ✨</div>
+      <h1 class="main-title">Pink Theory 💕</h1>
+      <p class="subtitle">Cada momento contigo, esparcido en el tiempo...</p>
+      
+      <div class="distance-badge">
+        <span>📍 Estado de México</span>
+        <span class="heart-line">⚡ 800+ km ⚡</span>
+        <span>Coahuila 📍</span>
+      </div>
+    </header>
+
+    <!-- MURAL / COLLAGE ESPARCIDO -->
+    <main class="scrapbook-grid">
+
+      <!-- Foto 1 -->
+      <div class="polaroid pos-left rot-left">
+        <img src="foto1.jpg" alt="Momento 1">
+        <p class="caption">"Tantas formulas y ninguna sirve para despejarte de mi mente..." 🌸</p>
+      </div>
+
+      <!-- FOTO 2 -->
+      <div class="polaroid pos-right rot-right">
+        <img src="foto2.jpg" alt="Momento 2">
+        <p class="caption">"Eres el ; que le hace falta a mi codigo..." 🎧</p>
+      </div>
+
+      <!-- CAJITA ANIMADA 1 (Izquierda) -->
+      <div class="animated-note-box note-left" onclick="toggleNote(this)">
+        <div class="note-header">💌 Nota Secreta 1</div>
+        <div class="note-content">No hay distancia en el mapa cuando dos personas están tan conectadas de corazón. Y con tan solo hablar... ya conecte contigo como dos cables de cobre que conectan o quiza solo generaste un corto en mi, por primera vez no quiero repararlo💖</div>
+      </div>
+
+      <!-- Foto 3 -->
+      <div class="polaroid pos-left-center rot-slightly-left">
+        <img src="foto3.jpg" alt="Momento 3">
+        <p class="caption">"Eres el CCS de mi HTML..."🎶</p>
+      </div>
+
+      <!-- Foto 4 (Central Grande) -->
+      <div class="polaroid pos-center-wide rot-right">
+        <img src="foto4.jpg" alt="Momento 4">
+        <p class="caption">"Nuestra propia historia estilo Freen & Becky" ✨</p>
+      </div>
+
+      <!-- CAJITA ANIMADA 2 (Derecha) -->
+      <div class="animated-note-box note-right" onclick="toggleNote(this)">
+        <div class="note-header">🎧 Nota Secreta 2</div>
+        <div class="note-content">Me encanta compartir contigo la pasión por SKZ, BabyMonster y Freen Sarocha. pero lo que más me gusta es hablar contigo✨</div>
+      </div>
+
+      <!-- Foto 5 -->
+      <div class="polaroid pos-right rot-left">
+        <img src="foto5.jpg" alt="Momento 5">
+        <p class="caption">"...Si fueras un circuito integrado. serias el corazon de mi sistema..."</p>
+      </div>
+
+      <!-- Foto 6 -->
+      <div class="polaroid pos-left rot-right">
+        <img src="foto6.jpg" alt="Momento 6">
+        <p class="caption">"En un mundo lleno de variables yo quiero que seas mi unica constante" 💖</p>
+      </div>
+
+      <!-- Foto 7 -->
+      <div class="polaroid pos-center rot-slightly-left">
+        <img src="foto7.jpg" alt="Momento 7">
+        <p class="caption">Y hoy quiero preguntarte algo... 💕</p>
+      </div>
+
+    </main>
+
+    <!-- TARJETA FINAL DE LA PREGUNTA -->
+    <section class="question-card" id="proposalCard">
+      <div class="gap-badge">Contrato 📜</div>
+      <h2 class="question-title">¿Puedo ser tu novia? 💘</h2>
+      <p class="question-desc">Para acortar cualquier distancia entre Coahuila y el Edomex...</p>
+
+      <div class="buttons">
+        <button id="yesBtn" class="btn yes">¡Sí, acepto! 💕</button>
+        <button id="noBtn" class="btn no">No...</button>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
